@@ -1,0 +1,26 @@
+{
+    "name": "react-native-birdy-dec-server",
+    "version": "1.0.2",
+    "description": "this is designed for dec server",
+    "homepage": "https://github.com/glenwallace/react-native-birdy-dec-server",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "react-native-birdy-dec-server"
+    ],
+    "author": {
+      "name": "birdy",
+      "email": "birdy@example.com"
+    },
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/glenwallace/react-native-birdy-dec-server.git"
+    },
+    "peerDependencies": {
+      "react": "*",
+      "react-native": "*"
+    }
+  }
