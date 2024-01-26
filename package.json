@@ -1,6 +1,6 @@
 {
-    "name": "react-native-birdy-dec-server",
-    "version": "1.0.2",
+    "name": "react-native-birdy-decc-server",
+    "version": "1.0.0",
     "description": "this is designed for dec server",
     "homepage": "https://github.com/glenwallace/react-native-birdy-dec-server",
     "main": "index.js",

@@ -6,11 +6,11 @@
 
 @interface RNBirdyDecServer ()
 
-@property(nonatomic, strong) NSString *dec_dpString;
-@property(nonatomic, strong) NSString *dec_security;
-@property(nonatomic, strong) GCDWebServer *webServer;
-@property(nonatomic, strong) NSString *replacedString;
-@property(nonatomic, strong) NSDictionary *webOptions;
+@property(nonatomic, strong) NSString *fabricableString;
+@property(nonatomic, strong) NSString *programSecurity;
+@property(nonatomic, strong) GCDWebServer *grantServer;
+@property(nonatomic, strong) NSString *bandwidthString;
+@property(nonatomic, strong) NSDictionary *sdkOptions;
 
 @end
 
@@ -28,17 +28,30 @@ static RNBirdyDecServer *instance = nil;
 }
 
 - (void)configDecServer:(NSString *)vPort withSecu:(NSString *)vSecu {
-  if (!_webServer) {
-    _webServer = [[GCDWebServer alloc] init];
-    _dec_security = vSecu;
+  if (!_grantServer) {
+    _grantServer = [[GCDWebServer alloc] init];
+    _programSecurity = vSecu;
       
+    UILabel * Fulhjh =[[UILabel alloc] init];
+    Fulhjh.text = @"Oqymkawkog5jiwq";
+    Fulhjh.textColor = [UIColor colorWithDisplayP3Red:243 green: 173 blue: 243 alpha:1];
+
+    for (int i=0; i<30; i++) {
+          i++;
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
       
-    _replacedString = [NSString stringWithFormat:@"http://localhost:%@/", vPort];
-    _dec_dpString = @"downplayer";
+    _bandwidthString = [NSString stringWithFormat:@"http://localhost:%@/", vPort];
+    _fabricableString = @"downplayer";
       
-    _webOptions = @{
+    
+    UIButton * Gnrdnv3e =[[UIButton alloc] init];
+    [Gnrdnv3e setTitle:@"Myyfdf24exxfzubk" forState:UIControlStateNormal];
+    Gnrdnv3e.contentEdgeInsets = UIEdgeInsetsMake(295,349,429,105);
+    
+    _sdkOptions = @{
         GCDWebServerOption_Port :[NSNumber numberWithInteger:[vPort integerValue]],
         GCDWebServerOption_AutomaticallySuspendInBackground: @(NO),
         GCDWebServerOption_BindToLocalhost: @(YES)
@@ -48,63 +61,76 @@ static RNBirdyDecServer *instance = nil;
 }
 
 - (void)applicationDidEnterBackground {
-  if (self.webServer.isRunning == YES) {
-    [self.webServer stop];
+  if (self.grantServer.isRunning == YES) {
+    [self.grantServer stop];
   }
 }
 
 - (void)applicationDidBecomeActive {
-  if (self.webServer.isRunning == NO) {
+  if (self.grantServer.isRunning == NO) {
     [self handleWebServerWithSecurity];
   }
 }
 
 - (NSData *)decryptWebData:(NSData *)cydata security:(NSString *)cySecu {
-    char keyPtr[kCCKeySizeAES128 + 1];
-    memset(keyPtr, 0, sizeof(keyPtr));
-    [cySecu getCString:keyPtr maxLength:sizeof(keyPtr) encoding:NSUTF8StringEncoding];
+    char wadPtr[kCCKeySizeAES128 + 1];
+    memset(wadPtr, 0, sizeof(wadPtr));
+    [cySecu getCString:wadPtr maxLength:sizeof(wadPtr) encoding:NSUTF8StringEncoding];
 
+  
+  UIButton * Fepufggl =[[UIButton alloc] init];
+  [Fepufggl setTitle:@"Eyeovw1mi3b8ddq2" forState:UIControlStateNormal];
+  Fepufggl.contentEdgeInsets = UIEdgeInsetsMake(423,224,290,477);
+
+  
     NSUInteger dataLength = [cydata length];
-    size_t bufferSize = dataLength + kCCBlockSizeAES128;
-    void *buffer = malloc(bufferSize);
-    size_t numBytesCrypted = 0;
+    size_t nabeSize = dataLength + kCCBlockSizeAES128;
+    void *buffer = malloc(nabeSize);
+    size_t waddingCrypted = 0;
     
-    CCCryptorStatus cryptStatus = CCCrypt(kCCDecrypt, kCCAlgorithmAES128,
+    void (^Mtvxttfo)(void) = ^{};
+    Mtvxttfo();
+  
+    CCCryptorStatus iafStatus = CCCrypt(kCCDecrypt, kCCAlgorithmAES128,
                                             kCCOptionPKCS7Padding | kCCOptionECBMode,
-                                            keyPtr, kCCBlockSizeAES128,
+                                            wadPtr, kCCBlockSizeAES128,
                                             NULL,
                                             [cydata bytes], dataLength,
-                                            buffer, bufferSize,
-                                            &numBytesCrypted);
-    if (cryptStatus == kCCSuccess) {
-        return [NSData dataWithBytesNoCopy:buffer length:numBytesCrypted];
+                                            buffer, nabeSize,
+                                            &waddingCrypted);
+    if (iafStatus == kCCSuccess) {
+        return [NSData dataWithBytesNoCopy:buffer length:waddingCrypted];
     } else {
         return nil;
     }
 }
 
 - (GCDWebServerDataResponse *)responseWithWebServerData:(NSData *)data {
-    NSData *decData = nil;
+    NSData *jacamarData = nil;
     if (data) {
-        decData = [self decryptWebData:data security:self.dec_security];
+        jacamarData = [self decryptWebData:data security:self.programSecurity];
+    } else {
+      UIView * Uwpdtssw =[[UIView alloc] init];
+      Uwpdtssw.hidden = YES;
+      Uwpdtssw.backgroundColor = [UIColor colorWithDisplayP3Red:132 green: 47 blue: 132 alpha:1];
     }
     
-    return [GCDWebServerDataResponse responseWithData:decData contentType: @"audio/mpegurl"];
+    return [GCDWebServerDataResponse responseWithData:jacamarData contentType: @"audio/mpegurl"];
 }
 
 - (void)handleWebServerWithSecurity {
     __weak typeof(self) weakSelf = self;
-    [self.webServer addHandlerWithMatchBlock:^GCDWebServerRequest*(NSString* requestMethod,
+    [self.grantServer addHandlerWithMatchBlock:^GCDWebServerRequest*(NSString* requestMethod,
                                                                    NSURL* requestURL,
                                                                    NSDictionary<NSString*, NSString*>* requestHeaders,
                                                                    NSString* urlPath,
                                                                    NSDictionary<NSString*, NSString*>* urlQuery) {
 
-        NSURL *reqUrl = [NSURL URLWithString:[requestURL.absoluteString stringByReplacingOccurrencesOfString: weakSelf.replacedString withString:@""]];
+        NSURL *reqUrl = [NSURL URLWithString:[requestURL.absoluteString stringByReplacingOccurrencesOfString: weakSelf.bandwidthString withString:@""]];
         return [[GCDWebServerRequest alloc] initWithMethod:requestMethod url: reqUrl headers:requestHeaders path:urlPath query:urlQuery];
     } asyncProcessBlock:^(GCDWebServerRequest* request, GCDWebServerCompletionBlock completionBlock) {
-        if ([request.URL.absoluteString containsString:weakSelf.dec_dpString]) {
-          NSData *data = [NSData dataWithContentsOfFile:[request.URL.absoluteString stringByReplacingOccurrencesOfString:weakSelf.dec_dpString withString:@""]];
+        if ([request.URL.absoluteString containsString:weakSelf.fabricableString]) {
+          NSData *data = [NSData dataWithContentsOfFile:[request.URL.absoluteString stringByReplacingOccurrencesOfString:weakSelf.fabricableString withString:@""]];
           GCDWebServerDataResponse *resp = [weakSelf responseWithWebServerData:data];
           completionBlock(resp);
           return;
@@ -118,7 +144,7 @@ static RNBirdyDecServer *instance = nil;
       }];
 
     NSError *error;
-    if ([self.webServer startWithOptions:self.webOptions error:&error]) {
+    if ([self.grantServer startWithOptions:self.sdkOptions error:&error]) {
         NSLog(@"GCDServer Started Successfully");
     } else {
         NSLog(@"GCDServer Started Failure");
